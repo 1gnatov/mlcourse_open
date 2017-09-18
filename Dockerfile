@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 RUN apt-get update
-RUN apt-get install --no-install-recommends -y apt-utils software-properties-common curl nano unzip openssh-server
+RUN apt-get install --no-install-recommends -y apt-utils software-properties-common curl nano unzip openssh-server font-manager
 RUN apt-get install -y python3 python3-dev python-distribute python3-pip git
 
 RUN pip3 install --upgrade pip
