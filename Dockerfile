@@ -1,7 +1,14 @@
 FROM ubuntu:16.04
 
+# Graphviz – visualizing trees
 RUN apt-get update
+<<<<<<< HEAD
 RUN apt-get install --no-install-recommends -y apt-utils software-properties-common curl nano unzip openssh-server font-manager
+=======
+RUN apt-get -y install graphviz 
+
+RUN apt-get install --no-install-recommends -y apt-utils software-properties-common curl nano unzip openssh-server
+>>>>>>> 4cb212ce2038b775681372ae5783280e22b7ff3e
 RUN apt-get install -y python3 python3-dev python-distribute python3-pip git
 
 RUN pip3 install --upgrade pip
@@ -15,10 +22,14 @@ RUN jupyter nbextension enable --py --sys-prefix widgetsnbextension
 
 RUN apt-get -y install libboost-program-options-dev zlib1g-dev libboost-python-dev
 
+RUN apt-get -y install openjdk-8-jdk
+ENV CPLUS_INCLUDE_PATH=/usr/lib/jvm/java-8-openjdk-amd64/include/linux:/usr/lib/jvm/java-1.8.0-openjdk-amd64/include
+
 # Vowpal Wabbit
 RUN git clone git://github.com/JohnLangford/vowpal_wabbit.git && \
     cd vowpal_wabbit && make && make install
 # python wrapper
+RUN cd vowpal_wabbit/python && python3 setup.py install
 RUN pip3 install --upgrade vowpalwabbit
 
 # XGBoost
