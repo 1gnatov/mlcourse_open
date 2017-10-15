@@ -106,3 +106,6 @@ ENV/
 /.idea/
 /out/
 *.iml
+
+data/stackoverflow_sample_125k.tsv
+data/top10_tags.tsv
