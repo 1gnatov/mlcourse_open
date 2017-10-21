@@ -107,5 +107,9 @@ ENV/
 /out/
 *.iml
 
+# data
 data/stackoverflow_sample_125k.tsv
 data/top10_tags.tsv
+data/faces/
+data/news_data/
+
