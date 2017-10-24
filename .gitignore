@@ -112,4 +112,6 @@ data/stackoverflow_sample_125k.tsv
 data/top10_tags.tsv
 data/faces/
 data/news_data/
+data/movie_reviews_train.csv
+data/samsung_HAR/
 
